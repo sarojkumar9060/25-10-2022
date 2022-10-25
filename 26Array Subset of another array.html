@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // JavaScript program to find whether an array
+        // is subset of another array
+        
+            /* Return true if arr2[] is a subset
+            of arr1[] */
+            function isSubset(arr1, arr2, m, n)
+            {
+                let i = 0;
+                let j = 0;
+                for (i = 0; i < n; i++) {
+                    for (j = 0; j < m; j++)
+                        if (arr2[i] == arr1[j])
+                            break;
+        
+                    /* If the above inner loop
+                    was not broken at all then
+                    arr2[i] is not present in
+                    arr1[] */
+                    if (j == m)
+                        return false;
+                }
+        
+                /* If we reach here then all
+                elements of arr2[] are present
+                in arr1[] */
+                return true;
+            }
+        
+        // Driver Code
+            let arr1 = [ 11, 1, 13, 21, 3, 7 ];
+            let arr2 = [ 11, 3, 7, 1 ];
+        
+            let m = arr1.length;
+            let n = arr2.length;
+        
+            if (isSubset(arr1, arr2, m, n))
+            document.write("arr2[] is "
+                            + "subset of arr1[] ");
+            else
+            document.write("arr2[] is "
+                            + "not a subset of arr1[]");
+        
+        </script>
+        
+</body>
+</html>
